@@ -20,7 +20,7 @@
                 <img src="https://picsum.photos/500" alt="" class="w-1/2 mx-auto py-5">
                 <div class="mt-4 grid">
                     <a href="{{route('dashboard')}}" class="text-xl font-bold p-4 border-b hover:bg-gray-300">Dashboard</a>
-                    <a href="" class="text-xl font-bold p-4 border-b hover:bg-gray-300">Categories</a>
+                    <a href="{{route('category.index')}}" class="text-xl font-bold p-4 border-b hover:bg-gray-300">Categories</a>
                     <a href="" class="text-xl font-bold p-4 border-b hover:bg-gray-300">Products</a>
                     <a href="" class="text-xl font-bold p-4 border-b hover:bg-gray-300">Orders</a>
                     <a href="" class="text-xl font-bold p-4 border-b hover:bg-gray-300">Users</a>

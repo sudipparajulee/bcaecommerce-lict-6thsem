@@ -10,4 +10,9 @@ class CategoryController extends Controller
     {
         return view('categories.index');
     }
+
+    public function create()
+    {
+        return view('categories.create');
+    }
 }
