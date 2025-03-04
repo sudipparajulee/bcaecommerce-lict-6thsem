@@ -3,7 +3,7 @@
 @section('content')
 
     <div class="flex justify-end my-5">
-        <a href="" class="bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-3 py-2 rounded-lg">Add Category</a>
+        <a href="{{route('category.create')}}" class="bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-3 py-2 rounded-lg">Add Category</a>
     </div>
 
     <table class="w-full">

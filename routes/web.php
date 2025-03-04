@@ -18,6 +18,7 @@ Route::middleware('auth')->group(function () {
     //Category
     Route::get('/category', [CategoryController::class, 'index'])->name('category.index');
     Route::get('/category/create',[CategoryController::class,'create'])->name('category.create');
+    Route::post('/category/store',[CategoryController::class,'store'])->name('category.store');
 
     //Profile
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
