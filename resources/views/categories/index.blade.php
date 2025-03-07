@@ -27,7 +27,7 @@
     <div id="popup" class="fixed inset-0 bg-gray-600 bg-opacity-60 backdrop-blur-sm hidden items-center justify-center">
         <div class="bg-white p-4 rounded-lg w-64">
             <h2 class="text-center text-xl font-bold">Are you sure?</h2>
-            <form action="" method="POST">
+            <form action="{{route('category.destroy')}}" method="POST">
                 @csrf
                 <input type="hidden" name="id" id="deleteid">
                 <div class="flex justify-center mt-2">

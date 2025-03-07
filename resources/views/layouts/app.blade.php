@@ -15,6 +15,7 @@
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
     <body class="font-sans antialiased">
+        @include('layouts.alert')
         <div class="flex">
             <div class="w-56 h-screen bg-gray-100 shadow-lg border border-gray-200">
                 <img src="https://picsum.photos/500" alt="" class="w-1/2 mx-auto py-5">
