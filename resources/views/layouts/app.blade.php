@@ -22,7 +22,7 @@
                 <div class="mt-4 grid">
                     <a href="{{route('dashboard')}}" class="text-xl font-bold p-4 border-b hover:bg-gray-300">Dashboard</a>
                     <a href="{{route('category.index')}}" class="text-xl font-bold p-4 border-b hover:bg-gray-300">Categories</a>
-                    <a href="" class="text-xl font-bold p-4 border-b hover:bg-gray-300">Products</a>
+                    <a href="{{route('product.index')}}" class="text-xl font-bold p-4 border-b hover:bg-gray-300">Products</a>
                     <a href="" class="text-xl font-bold p-4 border-b hover:bg-gray-300">Orders</a>
                     <a href="" class="text-xl font-bold p-4 border-b hover:bg-gray-300">Users</a>
                     <a href="" class="text-xl font-bold p-4 border-b hover:bg-gray-300">Logout</a>

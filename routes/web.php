@@ -3,6 +3,7 @@
 use App\Http\Controllers\BrandController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\PagesController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -31,6 +32,16 @@ Route::middleware('auth')->group(function () {
     Route::get('/brand/{id}/edit',[BrandController::class,'edit'])->name('brand.edit');
     Route::post('/brand/{id}/update',[BrandController::class,'update'])->name('brand.update');
     Route::post('/brand/destroy',[BrandController::class,'destroy'])->name('brand.destroy');
+
+
+    // Product
+    Route::get('/product', [ProductController::class, 'index'])->name('product.index');
+    Route::get('/product/create', [ProductController::class, 'create'])->name('product.create');
+    Route::post('/product/store', [ProductController::class, 'store'])->name('product.store');
+    Route::get('/product/{id}/edit', [ProductController::class, 'edit'])->name('product.edit');
+    Route::post('/product/{id}/update', [ProductController::class, 'update'])->name('product.update');
+    Route::post('/product/destroy', [ProductController::class, 'destroy'])->name('product.destroy');
+
 
     //Profile
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
