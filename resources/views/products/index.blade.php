@@ -16,21 +16,23 @@
             <th class="p-2 border">Stock</th>
             <th class="p-2 border">Action</th>
         </tr>
-
+        @foreach($products as $product)
         <tr class="text-center">
-            <td class="p-2 border"></td>
-            <td class="p-2 border"></td>
-            <td class="p-2 border"></td>
-            <td class="p-2 border"></td>
-            <td class="p-2 border"></td>
-            <td class="p-2 border"></td>
-            <td class="p-2 border"></td>
+            <td class="p-2 border">{{$loop->iteration}}</td>
+            <td class="p-2 border">
+                <img src="{{asset('images/products/'.$product->photopath)}}" alt="" class="h-20">
+            </td>
+            <td class="p-2 border">{{$product->name}}</td>
+            <td class="p-2 border">{{$product->category->name}}</td>
+            <td class="p-2 border">{{$product->brand->name}}</td>
+            <td class="p-2 border">{{$product->price}}</td>
+            <td class="p-2 border">{{$product->stock}}</td>
             <td class="p-2 border">
                 <a href="" class="bg-blue-500 text-white px-3 py-1.5 rounded-lg">Edit</a>
                 <a onclick="showPopup()" class="bg-red-500 text-white px-2 py-1.5 rounded-lg cursor-pointer">Delete</a>
             </td>
         </tr>
-
+        @endforeach
     </table>
 
     <div id="popup" class="fixed inset-0 bg-gray-600 bg-opacity-60 backdrop-blur-sm hidden items-center justify-center">

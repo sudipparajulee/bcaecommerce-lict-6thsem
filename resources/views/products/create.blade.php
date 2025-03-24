@@ -10,8 +10,9 @@
     </select>
 
     <select name="brand_id" id="" class="border p-2 rounded-lg w-full mt-2">
-        <option value="">Brand 1</option>
-        <option value="">Brand 2</option>
+        @foreach($brands as $brand)
+        <option value="{{$brand->id}}">{{$brand->name}}</option>
+        @endforeach
     </select>
 
     <input type="text" name="name" placeholder="Product Name" class="border p-2 rounded-lg w-full mt-2" value="{{old('name')}}">
