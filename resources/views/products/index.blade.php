@@ -28,7 +28,7 @@
             <td class="p-2 border">{{$product->price}}</td>
             <td class="p-2 border">{{$product->stock}}</td>
             <td class="p-2 border">
-                <a href="" class="bg-blue-500 text-white px-3 py-1.5 rounded-lg">Edit</a>
+                <a href="{{route('product.edit',$product->id)}}" class="bg-blue-500 text-white px-3 py-1.5 rounded-lg">Edit</a>
                 <a onclick="showPopup()" class="bg-red-500 text-white px-2 py-1.5 rounded-lg cursor-pointer">Delete</a>
             </td>
         </tr>
@@ -38,7 +38,7 @@
     <div id="popup" class="fixed inset-0 bg-gray-600 bg-opacity-60 backdrop-blur-sm hidden items-center justify-center">
         <div class="bg-white p-4 rounded-lg w-64">
             <h2 class="text-center text-xl font-bold">Are you sure?</h2>
-            <form action="{{route('category.destroy')}}" method="POST">
+            <form action="{{route('product.destroy')}}" method="POST">
                 @csrf
                 <input type="hidden" name="id" id="deleteid">
                 <div class="flex justify-center mt-2">
