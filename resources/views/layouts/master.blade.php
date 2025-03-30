@@ -8,12 +8,16 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body>
+    @php
+        $categories = \App\Models\Category::orderBy('priority')->get();
+    @endphp
     <nav class="bg-white shadow px-12 flex justify-between py-4">
         <h1 class="font-bold text-xl">LOGO</h1>
         <ul class="flex gap-4">
             <li><a href="{{route('home')}}">Home</a></li>
-            <li><a href="{{route('about')}}">About</a></li>
-            <li><a href="">Contact</a></li>
+            @foreach($categories as $category)
+                <li><a href="">{{$category->name}}</a></li>
+            @endforeach
             <li><a href="{{route('login')}}">Login</a></li>
         </ul>
     </nav>
