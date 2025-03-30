@@ -11,6 +11,8 @@ Route::get('/',[PagesController::class,'index'])->name('home');
 
 Route::get('/about',[PagesController::class,'about'])->name('about');
 
+Route::get('/categoryproduct/{id}',[PagesController::class,'categoryproduct'])->name('categoryproduct');
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');

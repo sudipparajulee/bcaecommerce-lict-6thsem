@@ -16,7 +16,7 @@
         <ul class="flex gap-4">
             <li><a href="{{route('home')}}">Home</a></li>
             @foreach($categories as $category)
-                <li><a href="">{{$category->name}}</a></li>
+                <li><a href="{{route('categoryproduct',$category->id)}}">{{$category->name}}</a></li>
             @endforeach
             <li><a href="{{route('login')}}">Login</a></li>
         </ul>
