@@ -20,7 +20,7 @@
         <p class="text-red-500">* {{$message}}</p>
     @enderror
 
-    <textarea name="description" placeholder="Enter Description" class="border p-2 rounded-lg w-full mt-2" rows="5">{{old('description')}}</textarea>
+    <textarea id="tiny" name="description" placeholder="Enter Description" class="border p-2 rounded-lg w-full mt-2" rows="5">{{old('description')}}</textarea>
     @error('description')
         <p class="text-red-500">* {{$message}}</p>
     @enderror
@@ -50,4 +50,12 @@
         <a href="{{route('product.index')}}" class="bg-red-500 text-white px-3 py-2 rounded-lg mt-2 ml-2">Cancel</a>
     </div>
 </form>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tinymce/7.6.1/tinymce.min.js" integrity="sha512-bib7srucEhHYYWglYvGY+EQb0JAAW0qSOXpkPTMgCgW8eLtswHA/K4TKyD4+FiXcRHcy8z7boYxk0HTACCTFMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+    tinymce.init({
+    selector: 'textarea#tiny',
+    plugins: 'lists link image preview code',
+    });
+  </script>
 @endsection
