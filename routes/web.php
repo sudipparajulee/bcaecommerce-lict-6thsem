@@ -13,6 +13,8 @@ Route::get('/about',[PagesController::class,'about'])->name('about');
 
 Route::get('/categoryproduct/{id}',[PagesController::class,'categoryproduct'])->name('categoryproduct');
 
+Route::get('/viewproduct/{id}',[PagesController::class,'viewproduct'])->name('viewproduct');
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');

@@ -25,4 +25,15 @@ class PagesController extends Controller
         $products = Product::where('category_id', $id)->latest()->get();
         return view('categoryproduct', compact('category', 'products'));
     }
+
+    public function viewproduct($id)
+    {
+        $product = Product::findOrFail($id);
+        $relatedproducts = Product::where('category_id', $product->category_id)
+            ->where('id', '!=', $id)
+            ->latest()
+            ->take(4)
+            ->get();
+        return view('viewproduct', compact('product','relatedproducts'));
+    }
 }

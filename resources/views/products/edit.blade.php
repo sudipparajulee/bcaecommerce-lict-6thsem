@@ -61,4 +61,11 @@
         <a href="{{route('product.index')}}" class="bg-red-500 text-white px-3 py-2 rounded-lg mt-2 ml-2">Cancel</a>
     </div>
 </form>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tinymce/7.6.1/tinymce.min.js" integrity="sha512-bib7srucEhHYYWglYvGY+EQb0JAAW0qSOXpkPTMgCgW8eLtswHA/K4TKyD4+FiXcRHcy8z7boYxk0HTACCTFMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+    tinymce.init({
+    selector: 'textarea',
+    plugins: 'lists link image preview code',
+    });
+  </script>
 @endsection
