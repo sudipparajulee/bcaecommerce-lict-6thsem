@@ -11,14 +11,35 @@
     @php
         $categories = \App\Models\Category::orderBy('priority')->get();
     @endphp
-    <nav class="bg-white shadow px-12 flex justify-between py-4">
+    <div class="bg-blue-600 text-white flex justify-between px-12 py-1">
+        <div class="flex gap-2">
+            <p>PHone</p>
+            <p>Address</p>
+            <p>Email</p>
+        </div>
+        <div>
+            @auth
+                <div class="flex gap-2">
+                    Hi, {{auth()->user()->name}}
+                    <form action="{{route('logout')}}" method="POST" class="inline">
+                        @csrf
+                        <button type="submit" class="text-white">Logout</button>
+                    </form>
+                </div>
+            @else
+                <a href="{{route('login')}}">Login</a>
+            @endauth
+        </div>
+    </div>
+
+
+    <nav class="bg-white shadow px-12 flex justify-between py-4 sticky top-0">
         <h1 class="font-bold text-xl">LOGO</h1>
         <ul class="flex gap-4">
             <li><a href="{{route('home')}}">Home</a></li>
             @foreach($categories as $category)
                 <li><a href="{{route('categoryproduct',$category->id)}}">{{$category->name}}</a></li>
             @endforeach
-            <li><a href="{{route('login')}}">Login</a></li>
         </ul>
     </nav>
     @yield('content')

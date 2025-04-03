@@ -30,6 +30,11 @@
                 </div>
                 <button type="submit" class="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-600">Login</button>
             </form>
+
+            <div class="mt-4 text-center">
+                <p class="text-gray-700">Don't have an account? <a href="{{ route('register') }}" class="text-blue-600 hover:underline">Register</a></p>
+            </div>
+
         </div>
     </div>
 </body>

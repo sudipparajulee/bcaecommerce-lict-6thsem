@@ -26,7 +26,10 @@
                     <a href="{{route('product.index')}}" class="text-xl font-bold p-4 border-b hover:bg-gray-300">Products</a>
                     <a href="" class="text-xl font-bold p-4 border-b hover:bg-gray-300">Orders</a>
                     <a href="" class="text-xl font-bold p-4 border-b hover:bg-gray-300">Users</a>
-                    <a href="" class="text-xl font-bold p-4 border-b hover:bg-gray-300">Logout</a>
+                    <form action="{{route('logout')}}" method="POST" class="flex">
+                        @csrf
+                        <button type="submit" class="text-xl block font-bold p-4 border-b flex-1  text-left hover:bg-gray-300">Logout</button>
+                    </form>
                 </div>
             </div>
             <div class="p-4 flex-1">
