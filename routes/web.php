@@ -17,9 +17,9 @@ Route::get('/viewproduct/{id}',[PagesController::class,'viewproduct'])->name('vi
 
 Route::get('/dashboard', function () {
     return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+})->middleware(['auth', 'isadmin'])->name('dashboard');
 
-Route::middleware('auth')->group(function () {
+Route::middleware(['auth','isadmin'])->group(function () {
 
     //Category
     Route::get('/category', [CategoryController::class, 'index'])->name('category.index');
