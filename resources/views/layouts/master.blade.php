@@ -8,6 +8,7 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body>
+    @include('layouts.alert')
     @php
         $categories = \App\Models\Category::orderBy('priority')->get();
     @endphp
@@ -19,12 +20,15 @@
         </div>
         <div>
             @auth
-                <div class="flex gap-2">
+                <div class="flex gap-2 group relative">
                     Hi, {{auth()->user()->name}}
-                    <form action="{{route('logout')}}" method="POST" class="inline">
-                        @csrf
-                        <button type="submit" class="text-white">Logout</button>
-                    </form>
+                    <div class="hidden group-hover:block absolute top-5 bg-gray-100 text-black py-2 right-0 z-50 border">
+                        <a href="" class="block p-2">My Cart</a>
+                        <form action="{{route('logout')}}" method="POST" class="inline p-2">
+                            @csrf
+                            <button type="submit">Logout</button>
+                        </form>
+                    </div>
                 </div>
             @else
                 <a href="{{route('login')}}">Login</a>

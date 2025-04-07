@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\BrandController;
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\ProductController;
@@ -14,6 +15,10 @@ Route::get('/about',[PagesController::class,'about'])->name('about');
 Route::get('/categoryproduct/{id}',[PagesController::class,'categoryproduct'])->name('categoryproduct');
 
 Route::get('/viewproduct/{id}',[PagesController::class,'viewproduct'])->name('viewproduct');
+
+Route::middleware(['auth'])->group(function (){
+    Route::post('/addtocart',[CartController::class,'store'])->name('addtocart');
+});
 
 Route::get('/dashboard', function () {
     return view('dashboard');

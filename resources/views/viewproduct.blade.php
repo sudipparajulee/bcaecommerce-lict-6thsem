@@ -6,7 +6,9 @@
             <div class="shadow-md p-2 border">
                 <img src="{{asset('images/products/'.$product->photopath)}}" alt="product" class="w-full object-cover">
             </div>
-            <div class="col-span-2">
+            <form action="{{route('addtocart')}}" method="POST" class="col-span-2">
+                @csrf
+                <input type="hidden" name="product_id" value="{{$product->id}}">
                 <h1 class="text-xl font-bold">{{$product->name}}</h1>
                 @if($product->discounted_price > 0)
                 <p class="text-lg font-bold">Rs. {{$product->discounted_price}} <span class="line-through font-normal text-sm">Rs. {{$product->price}}</span> </p>
@@ -18,15 +20,15 @@
 
                 {{-- Increment and Decrement  --}}
                 <div class="flex items-center mt-5">
-                    <button class="bg-gray-200 px-3 py-2 rounded-l-lg" onclick="decrement()">-</button>
-                    <input type="text" value="1" class=" border-none text-center w-12" id="qty" readonly>
-                    <button class="bg-gray-200 px-3 py-2 rounded-r-lg" onclick="increment()">+</button>
+                    <div class="bg-gray-200 px-3 py-2 rounded-l-lg" onclick="decrement()">-</div>
+                    <input type="text" name="quantity" value="1" class=" border-none text-center w-12" id="qty" readonly>
+                    <div class="bg-gray-200 px-3 py-2 rounded-r-lg" onclick="increment()">+</div>
                 </div>
 
                 <div class="flex justify-between mt-5">
                     <button class="bg-blue-500 text-white px-3 py-2 rounded-lg">Add to Cart</button>
                 </div>
-            </div>
+            </form>
             <div class="border-l border-gray-300 pl-4">
                 <p>Easy Delivery</p>
                 <p>Cash on Delivery</p>
