@@ -29,4 +29,15 @@ class CartController extends Controller
         $carts = Cart::where('user_id', Auth::user()->id)->get();
         return view('mycart', compact('carts'));
     }
+
+    public function destroy(Request $request)
+    {
+        $cart = Cart::find($request->id);
+        if($cart)
+        {
+            $cart->delete();
+            return redirect()->back()->with('success', 'Product removed from cart successfully.');
+        }
+        return redirect()->back()->with('success', 'Product not found in cart.');
+    }
 }

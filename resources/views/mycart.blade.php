@@ -27,8 +27,9 @@
                     </div>
                     <div class="grid gap-4">
                         <a href="" class="bg-blue-600 block text-center text-white px-4 py-2 rounded-lg">Order Now</a>
-                        <form action="" method="POST" class="block">
+                        <form action="{{route('cart.destroy')}}" method="POST" class="block">
                             @csrf
+                            <input type="hidden" name="id" value="{{$cart->id}}">
                             <button type="submit" class="bg-red-600 text-white px-8 py-2 rounded-lg">Remove</button>
                         </form>
                     </div>

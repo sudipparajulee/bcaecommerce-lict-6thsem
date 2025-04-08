@@ -19,6 +19,7 @@ Route::get('/viewproduct/{id}',[PagesController::class,'viewproduct'])->name('vi
 Route::middleware(['auth'])->group(function (){
     Route::post('/addtocart',[CartController::class,'store'])->name('addtocart');
     Route::get('/mycart',[CartController::class,'mycart'])->name('mycart');
+    Route::post('/cartdestroy',[CartController::class,'destroy'])->name('cart.destroy');
 });
 
 Route::get('/dashboard', function () {
