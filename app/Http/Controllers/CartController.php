@@ -15,6 +15,11 @@ class CartController extends Controller
             'quantity' => 'required|integer|min:1',
         ]);
         $data['user_id'] = Auth::user()->id;
+        $check = Cart::where('user_id', Auth::user()->id)->where('product_id', $data['product_id'])->first();
+        if($check)
+        {
+            return back()->with('success', 'Product already in cart.');
+        }
         Cart::create($data);
         return redirect()->back()->with('success', 'Product added to cart successfully.');
     }
