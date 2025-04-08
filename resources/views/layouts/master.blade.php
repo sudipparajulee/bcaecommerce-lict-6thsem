@@ -22,8 +22,8 @@
             @auth
                 <div class="flex gap-2 group relative">
                     Hi, {{auth()->user()->name}}
-                    <div class="hidden group-hover:block absolute top-5 bg-gray-100 text-black py-2 right-0 z-50 border">
-                        <a href="" class="block p-2">My Cart</a>
+                    <div class="hidden group-hover:block absolute top-5 bg-gray-100 text-black py-2 right-0 z-30 border">
+                        <a href="{{route('mycart')}}" class="block p-2">My Cart</a>
                         <form action="{{route('logout')}}" method="POST" class="inline p-2">
                             @csrf
                             <button type="submit">Logout</button>
@@ -37,7 +37,7 @@
     </div>
 
 
-    <nav class="bg-white shadow px-12 flex justify-between py-4 sticky top-0">
+    <nav class="bg-white shadow px-12 flex justify-between z-20 py-4 sticky top-0">
         <h1 class="font-bold text-xl">LOGO</h1>
         <ul class="flex gap-4">
             <li><a href="{{route('home')}}">Home</a></li>

@@ -1,5 +1,5 @@
 @if(Session::has('success'))
-<div class="fixed right-4 top-4 bg-green-600 px-6 py-4 text-xl text-white font-bold rounded-lg shadow-lg border border-gray-200" id="myalert">
+<div class="fixed right-4 top-4 bg-green-600 px-6 py-4 text-xl text-white font-bold rounded-lg shadow-lg border border-gray-200 z-50" id="myalert">
     <p>{{session('success')}}</p>
 </div>
 
