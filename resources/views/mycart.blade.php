@@ -26,7 +26,7 @@
                         </div>
                     </div>
                     <div class="grid gap-4">
-                        <a href="" class="bg-blue-600 block text-center text-white px-4 py-2 rounded-lg">Order Now</a>
+                        <a href="{{route('checkout',$cart->id)}}" class="bg-blue-600 block text-center text-white px-4 py-2 rounded-lg">Order Now</a>
                         <form action="{{route('cart.destroy')}}" method="POST" class="block">
                             @csrf
                             <input type="hidden" name="id" value="{{$cart->id}}">
