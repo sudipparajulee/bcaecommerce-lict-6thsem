@@ -3,6 +3,7 @@
 use App\Http\Controllers\BrandController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
@@ -21,6 +22,7 @@ Route::middleware(['auth'])->group(function (){
     Route::get('/mycart',[CartController::class,'mycart'])->name('mycart');
     Route::post('/cartdestroy',[CartController::class,'destroy'])->name('cart.destroy');
     Route::get('/checkout/{cartid}',[PagesController::class,'checkout'])->name('checkout');
+    Route::get('/order/store/{cartid}',[OrderController::class,'store'])->name('order.store');
 });
 
 Route::get('/dashboard', function () {
@@ -53,6 +55,10 @@ Route::middleware(['auth','isadmin'])->group(function () {
     Route::get('/product/{id}/edit', [ProductController::class, 'edit'])->name('product.edit');
     Route::post('/product/{id}/update', [ProductController::class, 'update'])->name('product.update');
     Route::post('/product/destroy', [ProductController::class, 'destroy'])->name('product.destroy');
+
+    // Order
+    Route::get('/orders', [OrderController::class, 'index'])->name('order.index');
+    Route::get('/orders/status/{orderid}/{status}', [OrderController::class, 'status'])->name('order.status');
 
 
     //Profile
