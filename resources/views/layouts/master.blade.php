@@ -39,6 +39,10 @@
 
     <nav class="bg-white shadow px-12 flex justify-between z-20 py-4 sticky top-0">
         <h1 class="font-bold text-xl">LOGO</h1>
+        <form action="{{route('search')}}" method="GET" class="flex gap-2">
+            <input type="text" name="search" placeholder="Search" class="border-2 border-gray-300 rounded-md px-4 py-2">
+            <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded-md">Search</button>
+        </form>
         <ul class="flex gap-4">
             <li><a href="{{route('home')}}">Home</a></li>
             @foreach($categories as $category)

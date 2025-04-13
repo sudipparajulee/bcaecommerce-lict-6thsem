@@ -17,6 +17,8 @@ Route::get('/categoryproduct/{id}',[PagesController::class,'categoryproduct'])->
 
 Route::get('/viewproduct/{id}',[PagesController::class,'viewproduct'])->name('viewproduct');
 
+Route::get('/search',[PagesController::class,'search'])->name('search');
+
 Route::middleware(['auth'])->group(function (){
     Route::post('/addtocart',[CartController::class,'store'])->name('addtocart');
     Route::get('/mycart',[CartController::class,'mycart'])->name('mycart');

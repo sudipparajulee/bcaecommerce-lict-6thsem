@@ -43,4 +43,11 @@ class PagesController extends Controller
         $cart = Cart::findOrFail($cartid);
         return view('checkout', compact('cart'));
     }
+
+    public function search(Request $request)
+    {
+        $search = $request->input('search');
+        $products = Product::where('name', 'like', '%' . $search . '%')->latest()->get();
+        return view('search', compact('products', 'search'));
+    }
 }
